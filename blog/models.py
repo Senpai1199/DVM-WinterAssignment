@@ -10,7 +10,7 @@ class Post(models.Model):
 	author = models.ForeignKey(User, on_delete=models.CASCADE)
 
 	def __str__(self):
-		return f'{self.title} -{self.author.username}'	
+		return '{} -{}'.format(self.title, self.author.username)
 	
 	def get_absolute_url(self):
 		return reverse('post-detail', kwargs={'pk': self.pk})
@@ -22,4 +22,4 @@ class Comment(models.Model):
 	content = models.TextField(max_length=160)
 
 	def __str__(self):
-		return f'{self.post.title} -{self.user.username}'
+		return '{} -{}'.format(self.post.title, self.user.username)

@@ -9,7 +9,7 @@ class Profile(models.Model):
 	subscribed_to = models.ManyToManyField('Profile', related_name='subscribed_by')
 
 	def __str__(self):
-		return f'{self.user.username}\'s Profile!'
+		return '{}\'s Profile!'.format(self.user.username)
 
 	def save(self, *args, **kwargs):
 		super().save(*args, **kwargs)

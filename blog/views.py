@@ -76,10 +76,10 @@ def post_create(request):
 			subscribed_by_profiles = user.profile.subscribed_by.all()
 			to_email = []
 			from_email = settings.DEFAULT_FROM_EMAIL
-			subject = f'New post by {username}!'
+			subject = 'New post by {}!'.format(username)
 			for subscribed_by_profile in subscribed_by_profiles:
 				to_email.append(str(subscribed_by_profile.user.email))
-			contact_message = f'A new post was created just now by {username} on the blog.'
+			contact_message = 'A new post was created just now by {} on the blog.'.format(username)
 			send_mail(subject, contact_message, from_email, to_email, fail_silently=False)
 			messages.success(request, 'Post made successfully!')
 			return redirect('blog-home')
