@@ -85,4 +85,4 @@ ENV/
 env.bak/
 venv.bak/
 
-django-blog/keyconfig
+django-blog/keyconfig.py
