@@ -86,3 +86,6 @@ env.bak/
 venv.bak/
 
 django-blog/keyconfig.py
+
+#VS Code
+.vscode
